@@ -1,0 +1,63 @@
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <head>
+        <h1>Movie and Webseries Recommadation System</h1>
+    </head>
+    <body>
+        <h2>Movie Recommadation</h2>
+        <div class="dropdown">
+  <h3>Select your favourite Movie</h2>
+    <form method="post" action="{% url 'movie' %}">
+    {% csrf_token %}
+    <select name="select movie">
+    {% for i in context.movies %}
+    <option><a class="dropdown-item" href="#">{{ i }}</a></option>
+    {% endfor %}
+    </select>
+  <br>
+  <input type="submit" value="Recommand Movie" class="btn btn-primary">
+  </form>
+</div>
+<br>
+<br>
+<h2>Web Series Recommadation</h2>
+<div class="dropdown">
+    <h3>Select your favourite Webseries</h2>
+     <form method="post" action="{% url 'show' %}">
+     {% csrf_token %}
+      <select name="select webseries">
+      {% for j in context.shows %}
+      <option><a class="dropdown-item" href="#">{{ j }}</a></option>
+      {% endfor %}
+      </select>
+    <br>
+    <input type="submit" value="Recommand Webseries" class="btn btn-primary">
+    </form>
+  </div>
+
+    </body>
+    <style>
+        .dropdown {
+            text-align: center;
+            align-self: center;
+            height: 300px;
+            width: auto;
+        }
+        h1 {
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+         h2 {
+            text-align: center;
+            height: 50px;
+            color: white;
+            background-color: black;
+         }
+         body {
+            background-image: "back.png";
+         }
+    </style>
+</html>

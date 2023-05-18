@@ -1,0 +1,207 @@
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<head>
+<div>
+<h1>Movie And Webseries Recommadation System</h1>
+</div>
+</head>
+<body>
+      <div class="container">
+        <h3>Movie Recommadation System</h3>
+        <form onsubmit="">
+        <nav>
+         <input id="toggle" type="checkbox" checked>
+        <h2>Select Your Favourate Movie</h2>
+      <ul>
+        <li><a id="movie">Chapter 01</a></li>
+      </ul>
+   </nav>
+   <input id="sub" type="submit" class="btn btn-danger">
+   </form>
+   </div>
+   <table>
+    <tr>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    </tr>
+   </table>
+   <br>
+   <br>
+   <br>
+   <div class="container">
+    <h3>Webseries Recommadation System</h3>
+    <form onsubmit="">
+    <nav>
+     <input id="toggle" type="checkbox" checked>
+    <h2>Select Your Favourate Webseries</h2>
+  <ul>
+    <li><a id="movie">Chapter 01</a></li>
+  </ul>
+</nav>
+<input id="sub" type="submit" class="btn btn-danger">
+</form>
+</div>
+<table>
+    <tr>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    <td><img src='OIP.jpeg' height="300px" width="250px"></td>
+    </tr>
+   </table>
+</body>
+
+
+<style>
+    h1 {
+        text-align: center;
+        border: 15px;
+        height: 50px;
+        width: auto;
+        background-color: black;
+        color: white;
+    }
+    body {
+        background-image: url("back.png");
+    }
+    .dropdown {
+        text-align: center;
+        height: 1000px;
+        width: auto;
+    }
+nav {
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+  width: clamp(320px, 50vw ,100%);
+}
+
+nav h2 {
+  font-size: 1.5rem;
+  border-radius: 2px;
+  position: relative;
+  background: tomato;
+  height: 40px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: inherit;
+  font-weight: 200;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 20px -2px rgba(0, 0, 0, 0.35);
+  transition: all 0.4s;
+}
+
+nav:hover h2 {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
+}
+
+#toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+  height: 40px;
+}
+
+h2::before{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: inherit;
+  aspect-ratio: 1;
+  background: currentColor;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  content: "";
+  clip-path: polygon(50% 25%, 20% 80%, 80% 80%);
+  transform: rotate(180deg) scale(0.75);
+}
+
+#toggle:not(:checked) ~ h2::before {
+  transform: rotate(0deg) scale(0.75);
+}
+
+#toggle:focus ~ h2{
+  background: mediumorchid;
+  transition: background 0.45s;
+}
+
+#toggle:checked ~ ul {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle:not(:checked) ~ ul {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+nav ul {
+  padding-left: 0;
+  padding-top: 1rem;
+  margin-top: 0;
+  background: #ece5da;
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  text-align: center;
+  transition: all 0.4s ease-out;
+  width: 100%;
+  position: absolute;
+}
+nav ul li {
+  border-radius: 2px;
+  position: relative;
+  display: inline-block;
+  line-height: 1.5;
+  width: 100%;
+  margin: 0 0 0.25rem 0;
+  background: tomato;
+  transition: background 3s;
+  box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.35);
+}
+
+nav ul li:hover,
+nav ul li a:focus {
+  background: mediumorchid;
+  transition: background 0.45s;
+}
+
+nav ul a {
+  display: block;
+  color: inherit;
+  text-transform: lowercase;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+
+.container {
+  max-width: 55ch;
+  margin: auto;
+  color: #36454F;
+}
+h3 {
+    color: white;
+    size: 100px;
+    background-color: black;
+}
+
+td {
+    background-color: black;
+}
+</style>
